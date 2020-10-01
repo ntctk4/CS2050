@@ -1,2 +1,2 @@
 # CS2050
-Labs and Homework done while taking CS2050 at Mizzou Fall 2014
+An archive of labs and homework I completed while taking CS2050 at Mizzou Fall 2014
