@@ -1,0 +1,64 @@
+/*
+ *Nathaniel Callahan
+ *hw3
+ *
+ *
+ *
+ * */
+#include<stdio.h>
+#include <stdlib.h>
+#include "stack.h"
+
+stack* create_stack()
+{
+	stack* s = malloc(sizeof(stack));
+
+	return s;
+
+}
+
+void push(stack *s, int val)
+{
+	node* newPtr;
+
+	newPtr = malloc(sizeof(node));
+
+	if(newPtr != NULL)
+	{
+		newPtr->data = val;
+		newPtr->next = s->stack;
+		s->stack = newPtr;
+	}
+	else
+	{
+		printf("%d not inserted. No memory available.\n", val);
+	}
+}
+
+void pop(stack *s)
+{
+
+	node* tempPtr;
+	int popValue;
+
+	tempPtr = s->stack;
+	popValue = s->stack->data;
+	s->stack = s->stack->next;
+	free(tempPtr);
+}
+
+int top(stack *s)
+{
+	int i = 0;
+
+
+	i = s->stack->data;
+	//s->stack->data = i;
+
+	return i;
+}
+
+int isEmpty(stack *s)
+{
+	return s->stack == NULL ? 1 : 0;
+}
